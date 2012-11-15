@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.min.js"></script>
+        <script src="../walkthrough.js"></script>
+
+        <style>
+            body {
+                font-family: helvetica, arial, sans-serif;
+            }
+            #content {
+                width: 900px;
+                margin: 0px auto;
+            }
+
+            #header {
+                border: 1px black solid;
+                background-color: #eee;
+                padding: 20px;
+                width: 820px;
+            }
+
+            .leftcolumn {
+                float: left;
+                width: 400px;
+            }
+
+            input[type="text"] {
+                height: 32px;
+                width: 75%;
+            }
+
+            button {
+                width: 100px;
+                height: 32px;
+                margin: 10px 0px;
+            }
+
+            .rightcolumn {
+                float: left;
+                width: 400px;
+                padding-left: 30px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="content">
+            <div id="header">
+                <h1>Site Title</h1>
+            </div>
+            <div class="leftcolumn">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt placerat sagittis. Praesent vel orci et dolor faucibus volutpat vel ut diam. Vivamus iaculis eleifend lacus id pharetra. Mauris a tellus metus. Nam placerat porta orci non faucibus. Integer vestibulum scelerisque urna ac rutrum. Mauris tincidunt sapien vel neque condimentum nec malesuada neque scelerisque. Quisque eros velit, placerat nec laoreet et, vestibulum sit amet augue. Vivamus rhoncus orci at est aliquet et posuere neque mattis.</p>
+                <input id="text-field" type="text"></input>
+                <button id="push-me">Push Me</button>
+            </div>
+            <div class="rightcolumn">
+                <p>Nunc est ipsum, pretium nec porttitor et, facilisis nec elit. Quisque id tellus ut nunc pellentesque gravida at ac neque. Sed sit amet lacus tellus, nec ultrices orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst. Aenean molestie nisi quis ipsum egestas iaculis quis et nunc. Etiam nisl purus, consequat bibendum interdum at, sodales et risus. Proin felis mauris, sodales ut fermentum a, lacinia quis nunc. Mauris id mattis felis. Donec ac eros sed augue adipiscing iaculis. Maecenas nec pellentesque nisl. Quisque pharetra lectus ac est consequat vitae molestie velit tempus. Fusce a consectetur mi. Morbi quis tempus urna.</p>
+
+                <p>Quisque adipiscing turpis sit amet massa hendrerit eget dapibus dui dignissim. In placerat ultricies metus quis fringilla. Nunc commodo, lacus vitae scelerisque hendrerit, leo felis iaculis quam, sit amet accumsan lectus lectus sed purus. Nam vulputate purus pharetra velit pulvinar ornare. In dictum auctor lorem at fermentum. Sed ligula nulla, venenatis sit amet aliquam ornare, semper vel neque. Sed in tincidunt dolor. Nullam tincidunt, ipsum sit amet condimentum fermentum, nisl nisl pulvinar risus, id gravida leo nibh a diam. Phasellus eu ipsum non lectus dictum pellentesque quis at nisl. Pellentesque sit amet nulla et eros ullamcorper imperdiet. Etiam urna nunc, pellentesque a commodo eget, sollicitudin vestibulum nisl. Proin auctor lacus ac risus ultricies adipiscing. Sed ligula velit, elementum ac porttitor id, pharetra ut elit. Etiam eget tincidunt odio. Pellentesque ullamcorper nisl nec diam tincidunt in venenatis magna eleifend.</p>
+            </div>
+        </div>
+
+        <script>
+            var walkthrough = new WT.Walkthrough();
+
+            walkthrough.addStep({
+                el: '#header',
+                html: "This is the <b>title</b> of the site. It is used to tell the user what the name of the site is.",
+                position: 'bottom'
+            });
+
+            walkthrough.addStep({
+                el: '.leftcolumn',
+                html: "The left column has some information on the left",
+                position: 'right'
+            });
+
+            walkthrough.addStep({
+                el: "#text-field",
+                html: "Enter the word 'walkthrough' in here",
+                position: 'bottom',
+                trigger: function (value) {
+                    if (value === 'walkthrough') {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            });
+
+            walkthrough.addStep({
+                el: '#push-me',
+                html: 'Push this button',
+                position: 'top',
+                trigger: 'click'
+            });
+
+            walkthrough.addStep({
+                el: '.rightcolumn',
+                html: "The right column, and the end of this example",
+                position: 'left'
+            });
+
+            walkthrough.reset();
+            walkthrough.start();
+        </script>
+    </body>
+</html>

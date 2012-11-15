@@ -1,0 +1,89 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: helvetica, arial, sans-serif;
+        }
+    
+        #content {
+            width: 500px;
+            margin: 0px auto;
+        }
+
+        .box {
+            border: 1px solid #222;
+            background-color: #eee;
+        }
+
+        #one {
+            width: 200px;
+            margin: 20px;
+            float: left;
+        }
+
+        #two {
+            width: 200px;
+            margin: 20px;
+            float: left;
+        }
+
+        #three {
+            width: 200px;
+            margin: 20px;
+            float: left;
+        }
+
+        #four {
+            width: 200px;
+            margin: 20px;
+            float: left;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <div id="one" class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt placerat sagittis. Praesent vel orci et dolor faucibus volutpat vel ut diam.</div>
+        <div id="two" class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt placerat sagittis. Praesent vel orci et dolor faucibus volutpat vel ut diam.</div>
+        <div id="three" class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt placerat sagittis. Praesent vel orci et dolor faucibus volutpat vel ut diam.</div>
+        <div id="four" class="box">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt placerat sagittis. Praesent vel orci et dolor faucibus volutpat vel ut diam.</div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="../walkthrough.js"></script>
+    <script>
+        var walkthrough = new Walkthrough({
+            boxWidth: 200,
+            boxHeight: 50
+        });
+
+        walkthrough.addStep({
+            el: '#one',
+            position: 'left',
+            text: 'left of the div'
+        });
+
+        walkthrough.addStep({
+            el: '#two',
+            position: 'right',
+            text: 'right of the div'
+        });
+
+        walkthrough.addStep({
+            el: '#three',
+            position: 'bottom',
+            text: 'below the div'
+        });
+
+        walkthrough.addStep({
+            el: '#four',
+            position: 'top',
+            text: 'above the div'
+        });
+
+        walkthrough.start();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="../walkthrough.js"></script>
+
+        <style>
+            body {
+                font-family: helvetica, arial, sans-serif;
+            }
+            #content {
+                width: 900px;
+                margin: 0px auto;
+            }
+
+            #header {
+                border: 1px black solid;
+                background-color: #eee;
+                padding: 20px;
+                width: 820px;
+            }
+
+            .leftcolumn {
+                float: left;
+                width: 400px;
+            }
+
+            input[type="text"] {
+                height: 32px;
+                width: 75%;
+            }
+
+            button {
+                width: 100px;
+                height: 32px;
+                margin: 10px 0px;
+            }
+
+            .rightcolumn {
+                float: left;
+                width: 400px;
+                padding-left: 30px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="content">
+            <div id="header">
+                <h1>Multipage Walkthrough: 1</h1>
+            </div>
+            <div id="page-one" class="leftcolumn">
+                <p>This walkthrough spans two pages. Local storage is used to remember continue the walkthrough between different page loads</p>
+                <a id="next-page" href="multipage-two.html">link</a>
+            </div>
+        </div>
+
+        <script src="multipage.js"></script>
+    </body>
+</html>
